@@ -1,0 +1,17 @@
+E:\Projects\2016\AusgabenVerwaltung\ExpenditureManagement\ExpenditureManagement\ECIT_EMS\bin\Debug\ECIT_EMS.exe.config
+E:\Projects\2016\AusgabenVerwaltung\ExpenditureManagement\ExpenditureManagement\ECIT_EMS\bin\Debug\ECIT_EMS.exe
+E:\Projects\2016\AusgabenVerwaltung\ExpenditureManagement\ExpenditureManagement\ECIT_EMS\bin\Debug\ECIT_EMS.pdb
+E:\Projects\2016\AusgabenVerwaltung\ExpenditureManagement\ExpenditureManagement\ECIT_EMS\obj\Debug\ECIT_EMS.csprojResolveAssemblyReference.cache
+E:\Projects\2016\AusgabenVerwaltung\ExpenditureManagement\ExpenditureManagement\ECIT_EMS\obj\Debug\ECIT_EMS.Properties.Resources.resources
+E:\Projects\2016\AusgabenVerwaltung\ExpenditureManagement\ExpenditureManagement\ECIT_EMS\obj\Debug\ECIT_EMS.csproj.GenerateResource.Cache
+E:\Projects\2016\AusgabenVerwaltung\ExpenditureManagement\ExpenditureManagement\ECIT_EMS\obj\Debug\ECIT_EMS.exe
+E:\Projects\2016\AusgabenVerwaltung\ExpenditureManagement\ExpenditureManagement\ECIT_EMS\obj\Debug\ECIT_EMS.pdb
+E:\Projects\2016\AusgabenVerwaltung\GitVersion\ExpenditureManagement\ECIT_EMS\bin\Debug\ECIT_EMS.exe.config
+E:\Projects\2016\AusgabenVerwaltung\GitVersion\ExpenditureManagement\ECIT_EMS\obj\Debug\ECIT_EMS.exe
+E:\Projects\2016\AusgabenVerwaltung\GitVersion\ExpenditureManagement\ECIT_EMS\obj\Debug\ECIT_EMS.pdb
+E:\Projects\2016\ExpenditureManagement\ECIT_EMS\bin\Debug\ECIT_EMS.exe.config
+E:\Projects\2016\ExpenditureManagement\ECIT_EMS\obj\Debug\ECIT_EMS.exe
+E:\Projects\2016\ExpenditureManagement\ECIT_EMS\obj\Debug\ECIT_EMS.pdb
+E:\Projects\2016\ExpenditureManagements\ECIT_EMS\bin\Debug\ECIT_EMS.exe.config
+E:\Projects\2016\ExpenditureManagements\ECIT_EMS\obj\Debug\ECIT_EMS.exe
+E:\Projects\2016\ExpenditureManagements\ECIT_EMS\obj\Debug\ECIT_EMS.pdb
