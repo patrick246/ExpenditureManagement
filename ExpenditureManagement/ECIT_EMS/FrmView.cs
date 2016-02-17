@@ -29,10 +29,10 @@ namespace ECIT_EMS
 
             theController = new Controller(this);
             InitializeComponent();
-           
+
             theController.TakeQuery("SELECT COUNT(A_ID) FROM acquisition", "get amount");
             c = Convert.ToInt32(theController.getOutcome(0));
-          
+
             dgvRecord.Rows.Add((++c).ToString());
 
 
@@ -87,10 +87,18 @@ namespace ECIT_EMS
                 theController.TakeInsert("INSERT INTO product(P_name, P_description, P_price, P_category) VALUES('" + dgvData[1 + (i * 8)] + "','" + dgvData[2 + (i * 8)] + "','" + dgvData[3 + (i * 8)] + "', '" + dgvData[5 + (i * 8)] + "')", "insert product");
                 string lastID = theController.getLastInsert();
                 theController.TakeInsert("INSERT INTO acquisition(A_product, A_date, A_shop) VALUES('" + lastID + "', '" + convertDate(dgvData[4 + (i * 8)].ToString()) + "', '" + dgvData[6 + (i * 8)] + "')", "insert acquisition");
-
             }
 
             rows = 0;
+
+            for (int p = dgvRecord.Rows.Count - 1; p >= 0; p--)
+            {
+                dgvRecord.Rows.RemoveAt(p);
+            }
+
+            theController.TakeQuery("SELECT COUNT(A_ID) FROM acquisition", "get amount");
+            c = Convert.ToInt32(theController.getOutcome(0));
+            dgvRecord.Rows.Add((++c).ToString());
         }
 
         private void btnRmvRow_Click(object sender, EventArgs e)
@@ -110,12 +118,19 @@ namespace ECIT_EMS
         }
         private void btnAddRow_Click(object sender, EventArgs e)
         {
-            c = dgvRecord.RowCount;
+
+            theController.TakeQuery("SELECT COUNT(A_ID) FROM acquisition", "get amount");
+            c = Convert.ToInt32(theController.getOutcome(0));
+            c += dgvRecord.Rows.Count;
             dgvRecord.Rows.Add((++c).ToString());
         }
 
         private string convertDate(string date)
         {
+            if (date == "none")
+            {
+                date = "00.00.0000 leer";
+            }
             date = date.Split(' ')[0];
             string[] spl = date.Split('.');
             return date = spl[2] + "-" + spl[1] + "-" + spl[0];
