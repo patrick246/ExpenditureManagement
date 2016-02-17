@@ -29,17 +29,10 @@ namespace ECIT_EMS
 
             theController = new Controller(this);
             InitializeComponent();
-            //theController.TakeQuery("SELECT Active FROM firstaccess", "first use?");
-            //if (Convert.ToInt32(theController.getOutcome(0)) == 0)
-            //{
-            //    c = 0;
-            //    theController.TakeInsert("UPDATE firstaccess SET Active = 1", "first used");
-            //}
-            //else
-            //{
+           
             theController.TakeQuery("SELECT COUNT(A_ID) FROM acquisition", "get amount");
             c = Convert.ToInt32(theController.getOutcome(0));
-            // }
+          
             dgvRecord.Rows.Add((++c).ToString());
 
 
