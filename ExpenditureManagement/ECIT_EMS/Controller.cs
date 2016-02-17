@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace ECIT_EMS
 {
@@ -16,15 +18,21 @@ namespace ECIT_EMS
         SQLconn theSQLconnector;
         QueryHandler theQueryHandler;
         MySqlConnection conn;
+       
 
         private ArrayList outcome;
 
+        public void pushData()
+        {
+            
+
+        }
 
         public Controller(FrmView FrmSurface)
         {
             frmSurface = FrmSurface;
             //theCalculator = new Calculator();
-            theSQLconnector = new SQLconn(CreateConnStr("", "user", "pw", "db", "Convert Zero Datetime = True")); // server, benutzer, passwort und Datenbankbezeichnung eingeben
+            theSQLconnector = new SQLconn(CreateConnStr("localhost", "root", "", "ems_db", "Convert Zero Datetime = True")); // server, benutzer, passwort und Datenbankbezeichnung eingeben
             conn = theSQLconnector.setConnector();
             theQueryHandler = new QueryHandler(ref conn, theSQLconnector, this);
         }
@@ -41,7 +49,7 @@ namespace ECIT_EMS
             theQueryHandler.create_Command(query, assignment);
 
             outcome = theQueryHandler.sendQuery();
-            if (outcome == null) MessageBox.Show("Kein Eintrag!");
+            if (outcome == null) return;
             /* theSQLconnector.getValues();*/
         }
 
@@ -78,7 +86,7 @@ namespace ECIT_EMS
             }
             catch
             {
-                MessageBox.Show("Es ist etwas mit der Antwort der Datenbank schiefgelaufen");
+                MessageBox.Show("Kein Eintrag!");
                 return null;
             }
         }
@@ -124,21 +132,21 @@ namespace ECIT_EMS
             return Convert.ToString(theQueryHandler.LastInsert());
         }
 
-        public void doBackup()
-        {
-            theSQLconnector.backupDatabase();
-        }
+        //public void doBackup()
+        //{
+        //    theSQLconnector.backupDatabase();
+        //}
 
-        public void doRestore(string path)
-        {
-            if (dropDatabase())
-                theSQLconnector.restoreDatabase(path);
-            else
-            {
-                MessageBox.Show("Vorgang abgebrochen.", "Abbruch", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+        //public void doRestore(string path)
+        //{
+        //    if (dropDatabase())
+        //        theSQLconnector.restoreDatabase(path);
+        //    else
+        //    {
+        //        MessageBox.Show("Vorgang abgebrochen.", "Abbruch", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
             
-        }
+        //}
         
     
 

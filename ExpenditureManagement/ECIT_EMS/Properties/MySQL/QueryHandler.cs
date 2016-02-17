@@ -63,7 +63,7 @@ namespace ECIT_EMS
 
         public ArrayList sendQuery(int repeat)
         {
-            int i = 0;
+            //int i = 0;
             theConnector.Connect();             // Verbindungsaufbau 
             //             string state = conn.State.ToString();
             //             MessageBox.Show(state);
