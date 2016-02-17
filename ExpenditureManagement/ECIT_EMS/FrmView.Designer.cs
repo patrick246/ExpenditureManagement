@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvRecord = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.btnSend = new DevComponents.DotNetBar.ButtonX();
             this.A_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +39,10 @@
             this.category = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
             this.company = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
             this.location = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
+            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.btnSend = new DevComponents.DotNetBar.ButtonX();
+            this.btnRmvRow = new DevComponents.DotNetBar.ButtonX();
+            this.btnAddRow = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,22 +82,6 @@
             this.dgvRecord.Size = new System.Drawing.Size(1222, 181);
             this.dgvRecord.TabIndex = 0;
             this.dgvRecord.KeyUp += new System.Windows.Forms.KeyEventHandler(this.onKeyUp);
-            // 
-            // styleManager1
-            // 
-            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Black;
-            // 
-            // btnSend
-            // 
-            this.btnSend.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSend.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSend.Location = new System.Drawing.Point(1095, 187);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(115, 39);
-            this.btnSend.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSend.TabIndex = 1;
-            this.btnSend.Text = "Eintragen";
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // A_ID
             // 
@@ -196,11 +182,53 @@
             this.location.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.location.Width = 163;
             // 
+            // styleManager1
+            // 
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Black;
+            // 
+            // btnSend
+            // 
+            this.btnSend.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSend.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSend.Location = new System.Drawing.Point(1095, 187);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(115, 39);
+            this.btnSend.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSend.TabIndex = 1;
+            this.btnSend.Text = "Eintragen";
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // btnRmvRow
+            // 
+            this.btnRmvRow.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnRmvRow.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnRmvRow.Location = new System.Drawing.Point(12, 187);
+            this.btnRmvRow.Name = "btnRmvRow";
+            this.btnRmvRow.Size = new System.Drawing.Size(82, 24);
+            this.btnRmvRow.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnRmvRow.TabIndex = 2;
+            this.btnRmvRow.Text = "Zeile löschen";
+            this.btnRmvRow.Click += new System.EventHandler(this.btnRmvRow_Click);
+            // 
+            // btnAddRow
+            // 
+            this.btnAddRow.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAddRow.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnAddRow.Location = new System.Drawing.Point(12, 217);
+            this.btnAddRow.Name = "btnAddRow";
+            this.btnAddRow.Size = new System.Drawing.Size(82, 24);
+            this.btnAddRow.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnAddRow.TabIndex = 3;
+            this.btnAddRow.Text = "Zeile hinzufügen";
+            this.btnAddRow.Click += new System.EventHandler(this.btnAddRow_Click);
+            // 
             // FrmView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1222, 708);
+            this.Controls.Add(this.btnAddRow);
+            this.Controls.Add(this.btnRmvRow);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.dgvRecord);
             this.DoubleBuffered = true;
@@ -225,6 +253,8 @@
         private DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn category;
         private DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn company;
         private DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn location;
+        private DevComponents.DotNetBar.ButtonX btnRmvRow;
+        private DevComponents.DotNetBar.ButtonX btnAddRow;
     }
 }
 
