@@ -50,6 +50,7 @@
             // 
             this.dgvRecord.AllowUserToAddRows = false;
             this.dgvRecord.AllowUserToResizeRows = false;
+            this.dgvRecord.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.A_ID,
@@ -79,7 +80,7 @@
             this.dgvRecord.SelectAllSignVisible = false;
             this.dgvRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRecord.ShowEditingIcon = false;
-            this.dgvRecord.Size = new System.Drawing.Size(1222, 181);
+            this.dgvRecord.Size = new System.Drawing.Size(1050, 445);
             this.dgvRecord.TabIndex = 0;
             this.dgvRecord.KeyUp += new System.Windows.Forms.KeyEventHandler(this.onKeyUp);
             // 
@@ -87,25 +88,21 @@
             // 
             this.A_ID.HeaderText = "Nr.";
             this.A_ID.Name = "A_ID";
-            this.A_ID.Width = 163;
             // 
             // productname
             // 
             this.productname.HeaderText = "Gegenstand";
             this.productname.Name = "productname";
-            this.productname.Width = 162;
             // 
             // p_description
             // 
             this.p_description.HeaderText = "Beschreibung";
             this.p_description.Name = "p_description";
-            this.p_description.Width = 163;
             // 
             // price
             // 
             this.price.HeaderText = "Preis";
             this.price.Name = "price";
-            this.price.Width = 163;
             // 
             // date
             // 
@@ -137,7 +134,6 @@
             this.date.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.date.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.date.Name = "date";
-            this.date.Width = 162;
             // 
             // category
             // 
@@ -152,7 +148,6 @@
             this.category.Name = "category";
             this.category.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.category.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.category.Width = 163;
             // 
             // company
             // 
@@ -166,7 +161,6 @@
             this.company.Name = "company";
             this.company.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.company.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.company.Width = 162;
             // 
             // location
             // 
@@ -180,7 +174,6 @@
             this.location.Name = "location";
             this.location.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.location.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.location.Width = 163;
             // 
             // styleManager1
             // 
@@ -189,8 +182,9 @@
             // btnSend
             // 
             this.btnSend.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSend.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSend.Location = new System.Drawing.Point(1095, 187);
+            this.btnSend.Location = new System.Drawing.Point(923, 480);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(115, 39);
             this.btnSend.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -201,10 +195,11 @@
             // btnRmvRow
             // 
             this.btnRmvRow.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnRmvRow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRmvRow.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnRmvRow.Location = new System.Drawing.Point(12, 187);
+            this.btnRmvRow.Location = new System.Drawing.Point(12, 465);
             this.btnRmvRow.Name = "btnRmvRow";
-            this.btnRmvRow.Size = new System.Drawing.Size(82, 24);
+            this.btnRmvRow.Size = new System.Drawing.Size(87, 24);
             this.btnRmvRow.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnRmvRow.TabIndex = 2;
             this.btnRmvRow.Text = "Zeile löschen";
@@ -213,10 +208,12 @@
             // btnAddRow
             // 
             this.btnAddRow.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAddRow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddRow.AutoSize = true;
             this.btnAddRow.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAddRow.Location = new System.Drawing.Point(12, 217);
+            this.btnAddRow.Location = new System.Drawing.Point(12, 495);
             this.btnAddRow.Name = "btnAddRow";
-            this.btnAddRow.Size = new System.Drawing.Size(82, 24);
+            this.btnAddRow.Size = new System.Drawing.Size(87, 24);
             this.btnAddRow.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAddRow.TabIndex = 3;
             this.btnAddRow.Text = "Zeile hinzufügen";
@@ -226,17 +223,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1222, 708);
+            this.ClientSize = new System.Drawing.Size(1050, 531);
             this.Controls.Add(this.btnAddRow);
             this.Controls.Add(this.btnRmvRow);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.dgvRecord);
             this.DoubleBuffered = true;
+            this.MaximumSize = new System.Drawing.Size(1800, 800);
+            this.MinimumSize = new System.Drawing.Size(640, 570);
             this.Name = "FrmView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EMS by ECIT";
+            this.TitleText = "Expenditure Manager";
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
