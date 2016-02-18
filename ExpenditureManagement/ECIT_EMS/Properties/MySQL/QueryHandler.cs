@@ -5,9 +5,10 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Data;
 
 namespace ECIT_EMS
-{ 
+{
     class QueryHandler
     {
         MySqlConnection conn;
@@ -15,6 +16,8 @@ namespace ECIT_EMS
         MySqlCommand aCommand;
         Controller theController;
         private ArrayList value = new ArrayList();
+
+        DataTable dt = new DataTable();
 
         public QueryHandler(ref MySqlConnection connection, SQLconn MySql_connector, Controller controller)
         {
@@ -61,6 +64,16 @@ namespace ECIT_EMS
 
         }
 
+        public DataTable copy()
+        {
+            dt.Clear();
+            using (MySqlDataAdapter da = new MySqlDataAdapter(aCommand))
+            {
+                da.Fill(dt);
+            }
+            return dt;
+        }
+
         public ArrayList sendQuery(int repeat)
         {
             //int i = 0;
@@ -74,15 +87,15 @@ namespace ECIT_EMS
                 reader = aCommand.ExecuteReader();
                 while (reader.Read())
                 {
-                    Object[] values = new Object[reader.FieldCount+1];
-                    value.Capacity = reader.FieldCount +1;
+                    Object[] values = new Object[reader.FieldCount + 1];
+                    //value.Capacity = reader.FieldCount + 2;
                     // value.Add(reader[i]);
                     reader.GetValues(values);
-                    for (int f = 0; f <= values.Length; f++)
+                    for (int f = 0; f < values.Length; f++)
                     {
                         value.Add(values[f]);
-                        // MessageBox.Show(values[f].ToString());
-                        // MessageBox.Show(value[f].ToString());
+                        //    // MessageBox.Show(values[f].ToString());
+                        //    // MessageBox.Show(value[f].ToString());
                     }
 
                     //for (int i = 0; i < reader.FieldCount; i++) //next Value
