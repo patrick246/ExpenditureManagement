@@ -30,7 +30,7 @@ namespace ECIT_EMS
 
             theController = new Controller(this);
             InitializeComponent();
-
+            dgvRecord.EditMode = DataGridViewEditMode.EditOnEnter;
             theController.TakeQuery("SELECT COUNT(A_ID) FROM acquisition", "get amount");
             c = Convert.ToInt32(theController.getOutcome(0));
 
@@ -278,8 +278,47 @@ namespace ECIT_EMS
             DataTable dataTable;
             string From = dtpFrom.Value.ToString("yyyy-MM-dd");
             string To = dtpTo.Value.ToString("yyyy-MM-dd");
+            string condition_period, condition_category, condition_shop, condition_location;
 
-            dataTable = theController.fetch("SELECT A_product, A_shop, A_date, A_loc, A_ID FROM acquisition WHERE A_date BETWEEN '" + From + "' AND '" + To + "'", "");
+            if (chbPeriod.Checked)
+            {
+                condition_period = "A_date BETWEEN '" + From + "' AND '" + To + "'";
+            }
+            else
+            {
+                condition_period = "A_date BETWEEN '1000-01-01' AND '9999-12-31'";
+                MessageBox.Show(From);
+            }
+            if (chbShop.Checked)
+            {
+                condition_shop = " AND A_shop = '" + (Convert.ToInt32(cmbShop.SelectedIndex) + 1).ToString() + "'";
+                MessageBox.Show((Convert.ToInt32(cmbShop.SelectedIndex) + 1).ToString());
+            }
+            else
+            {
+                condition_shop = "";
+            }
+            if (chbLoc.Checked)
+            {
+                condition_location = " AND A_loc = '" + (Convert.ToInt32(cmbLoc.SelectedIndex) + 1).ToString() + "'";
+            }
+            else
+            {
+                condition_location = "";
+            }
+
+            if (chbCat.Checked)
+            {
+                condition_category = " AND A_product IN (SELECT P_ID FROM product WHERE P_category = '" + (Convert.ToInt32(cmbCat.SelectedIndex) + 1).ToString() + "')";
+            }
+            else
+            {
+                condition_category = "";
+            }
+
+            dataTable = theController.fetch("SELECT A_product, A_shop, A_date, A_loc, A_ID FROM acquisition WHERE " + condition_period + condition_shop + condition_location + condition_category, "");
+
+
             foreach (DataRow drow in dataTable.Rows)
             {
                 theController.TakeQuery("SELECT P_name FROM product WHERE P_ID = '" + drow[0].ToString() + "'", "get productname by ID");
@@ -306,11 +345,15 @@ namespace ECIT_EMS
 
         }
 
+
+
         private void onKeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && dgvRecord.Focus())
             {
-                c = dgvRecord.RowCount;
+                theController.TakeQuery("SELECT COUNT(A_ID) FROM acquisition", "get amount");
+                c = Convert.ToInt32(theController.getOutcome(0));
+                c += dgvRecord.Rows.Count;
                 dgvRecord.Rows.Add((++c).ToString());
             }
         }

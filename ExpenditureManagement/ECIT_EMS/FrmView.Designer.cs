@@ -32,6 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvRecord = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.A_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
+            this.category = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
+            this.company = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
+            this.location = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.btnSend = new DevComponents.DotNetBar.ButtonX();
             this.btnRmvRow = new DevComponents.DotNetBar.ButtonX();
@@ -60,6 +69,15 @@
             this.AnalysisTab = new DevComponents.DotNetBar.RibbonTabItem();
             this.styleManager2 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.dgvSearch = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.Search_nr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Search_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Search_product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Search_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Search_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Search_date = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
+            this.Search_category = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
+            this.Search_shop = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
+            this.Search_location = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,29 +89,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cmbLoc = new System.Windows.Forms.ComboBox();
             this.grpSearch = new System.Windows.Forms.GroupBox();
+            this.chbPeriod = new System.Windows.Forms.CheckBox();
+            this.chbLoc = new System.Windows.Forms.CheckBox();
+            this.chbShop = new System.Windows.Forms.CheckBox();
+            this.chbCat = new System.Windows.Forms.CheckBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.grpAdd = new System.Windows.Forms.GroupBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtAdd = new System.Windows.Forms.TextBox();
             this.lblAdd = new System.Windows.Forms.Label();
-            this.Search_nr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Search_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Search_product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Search_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Search_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Search_date = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
-            this.Search_category = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
-            this.Search_shop = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
-            this.Search_location = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
-            this.A_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.p_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
-            this.category = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
-            this.company = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
-            this.location = new DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).BeginInit();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
@@ -106,7 +110,7 @@
             // 
             this.dgvRecord.AllowUserToAddRows = false;
             this.dgvRecord.AllowUserToResizeRows = false;
-            this.dgvRecord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvRecord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRecord.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -141,6 +145,102 @@
             this.dgvRecord.Size = new System.Drawing.Size(1278, 351);
             this.dgvRecord.TabIndex = 0;
             this.dgvRecord.KeyUp += new System.Windows.Forms.KeyEventHandler(this.onKeyUp);
+            // 
+            // A_ID
+            // 
+            this.A_ID.HeaderText = "Nr.";
+            this.A_ID.Name = "A_ID";
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "Menge";
+            this.amount.Name = "amount";
+            // 
+            // productname
+            // 
+            this.productname.HeaderText = "Gegenstand";
+            this.productname.Name = "productname";
+            // 
+            // p_description
+            // 
+            this.p_description.HeaderText = "Beschreibung";
+            this.p_description.Name = "p_description";
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Preis in €";
+            this.price.Name = "price";
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Datum";
+            this.date.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
+            // 
+            // 
+            // 
+            this.date.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.date.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.date.MonthCalendar.BackgroundStyle.Class = "";
+            this.date.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.date.MonthCalendar.CommandsBackgroundStyle.Class = "";
+            this.date.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.date.MonthCalendar.DisplayMonth = new System.DateTime(2016, 2, 1, 0, 0, 0, 0);
+            this.date.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
+            this.date.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.date.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.date.MonthCalendar.NavigationBackgroundStyle.Class = "";
+            this.date.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.date.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.date.Name = "date";
+            // 
+            // category
+            // 
+            this.category.DropDownHeight = 106;
+            this.category.DropDownWidth = 121;
+            this.category.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.category.HeaderText = "Kategorie";
+            this.category.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.category.IntegralHeight = false;
+            this.category.ItemHeight = 13;
+            this.category.MaxDropDownItems = 20;
+            this.category.Name = "category";
+            this.category.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.category.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            // 
+            // company
+            // 
+            this.company.DropDownHeight = 106;
+            this.company.DropDownWidth = 121;
+            this.company.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.company.HeaderText = "Shop";
+            this.company.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.company.IntegralHeight = false;
+            this.company.ItemHeight = 13;
+            this.company.Name = "company";
+            this.company.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.company.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            // 
+            // location
+            // 
+            this.location.DropDownHeight = 106;
+            this.location.DropDownWidth = 121;
+            this.location.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.location.HeaderText = "Ort";
+            this.location.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.location.IntegralHeight = false;
+            this.location.ItemHeight = 13;
+            this.location.Name = "location";
+            this.location.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.location.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // styleManager1
             // 
@@ -504,7 +604,7 @@
             // 
             this.dgvSearch.AllowUserToAddRows = false;
             this.dgvSearch.AllowUserToResizeRows = false;
-            this.dgvSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -539,159 +639,6 @@
             this.dgvSearch.Size = new System.Drawing.Size(1278, 404);
             this.dgvSearch.TabIndex = 5;
             this.dgvSearch.Visible = false;
-            // 
-            // dtpFrom
-            // 
-            this.dtpFrom.Location = new System.Drawing.Point(251, 30);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(200, 20);
-            this.dtpFrom.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(216, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Von:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(216, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Bis:";
-            // 
-            // dtpTo
-            // 
-            this.dtpTo.Location = new System.Drawing.Point(251, 58);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(200, 20);
-            this.dtpTo.TabIndex = 9;
-            // 
-            // cmbCat
-            // 
-            this.cmbCat.FormattingEnabled = true;
-            this.cmbCat.Location = new System.Drawing.Point(77, 30);
-            this.cmbCat.Name = "cmbCat";
-            this.cmbCat.Size = new System.Drawing.Size(121, 21);
-            this.cmbCat.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Kategorie:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 61);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Shop:";
-            // 
-            // cmbShop
-            // 
-            this.cmbShop.FormattingEnabled = true;
-            this.cmbShop.Location = new System.Drawing.Point(77, 57);
-            this.cmbShop.Name = "cmbShop";
-            this.cmbShop.Size = new System.Drawing.Size(121, 21);
-            this.cmbShop.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Ort:";
-            // 
-            // cmbLoc
-            // 
-            this.cmbLoc.FormattingEnabled = true;
-            this.cmbLoc.Location = new System.Drawing.Point(77, 84);
-            this.cmbLoc.Name = "cmbLoc";
-            this.cmbLoc.Size = new System.Drawing.Size(121, 21);
-            this.cmbLoc.TabIndex = 14;
-            // 
-            // grpSearch
-            // 
-            this.grpSearch.Controls.Add(this.grpAdd);
-            this.grpSearch.Controls.Add(this.btnSearch);
-            this.grpSearch.Controls.Add(this.cmbLoc);
-            this.grpSearch.Controls.Add(this.dtpTo);
-            this.grpSearch.Controls.Add(this.label5);
-            this.grpSearch.Controls.Add(this.label2);
-            this.grpSearch.Controls.Add(this.cmbCat);
-            this.grpSearch.Controls.Add(this.label1);
-            this.grpSearch.Controls.Add(this.label3);
-            this.grpSearch.Controls.Add(this.dtpFrom);
-            this.grpSearch.Controls.Add(this.label4);
-            this.grpSearch.Controls.Add(this.cmbShop);
-            this.grpSearch.Location = new System.Drawing.Point(12, 107);
-            this.grpSearch.Name = "grpSearch";
-            this.grpSearch.Size = new System.Drawing.Size(469, 122);
-            this.grpSearch.TabIndex = 16;
-            this.grpSearch.TabStop = false;
-            this.grpSearch.Text = "Suche nach:";
-            this.grpSearch.Visible = false;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(309, 88);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 16;
-            this.btnSearch.Text = "Suchen";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // grpAdd
-            // 
-            this.grpAdd.Controls.Add(this.btnAdd);
-            this.grpAdd.Controls.Add(this.txtAdd);
-            this.grpAdd.Controls.Add(this.lblAdd);
-            this.grpAdd.Location = new System.Drawing.Point(0, 0);
-            this.grpAdd.Name = "grpAdd";
-            this.grpAdd.Size = new System.Drawing.Size(469, 122);
-            this.grpAdd.TabIndex = 17;
-            this.grpAdd.TabStop = false;
-            this.grpAdd.Text = "Hinzufügen:";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(219, 88);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 13;
-            this.btnAdd.Text = "Hinzufügen";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // txtAdd
-            // 
-            this.txtAdd.Location = new System.Drawing.Point(77, 54);
-            this.txtAdd.Name = "txtAdd";
-            this.txtAdd.Size = new System.Drawing.Size(112, 20);
-            this.txtAdd.TabIndex = 12;
-            // 
-            // lblAdd
-            // 
-            this.lblAdd.AutoSize = true;
-            this.lblAdd.Location = new System.Drawing.Point(21, 58);
-            this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(50, 13);
-            this.lblAdd.TabIndex = 11;
-            this.lblAdd.Text = "Lokalität:";
             // 
             // Search_nr
             // 
@@ -789,101 +736,199 @@
             this.Search_location.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Search_location.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
-            // A_ID
+            // dtpFrom
             // 
-            this.A_ID.HeaderText = "Nr.";
-            this.A_ID.Name = "A_ID";
+            this.dtpFrom.Location = new System.Drawing.Point(251, 30);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(200, 20);
+            this.dtpFrom.TabIndex = 6;
             // 
-            // amount
+            // label1
             // 
-            this.amount.HeaderText = "Menge";
-            this.amount.Name = "amount";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(216, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Von:";
             // 
-            // productname
+            // label2
             // 
-            this.productname.HeaderText = "Gegenstand";
-            this.productname.Name = "productname";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(216, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Bis:";
             // 
-            // p_description
+            // dtpTo
             // 
-            this.p_description.HeaderText = "Beschreibung";
-            this.p_description.Name = "p_description";
+            this.dtpTo.Location = new System.Drawing.Point(251, 58);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(200, 20);
+            this.dtpTo.TabIndex = 9;
             // 
-            // price
+            // cmbCat
             // 
-            this.price.HeaderText = "Preis in €";
-            this.price.Name = "price";
+            this.cmbCat.FormattingEnabled = true;
+            this.cmbCat.Location = new System.Drawing.Point(88, 31);
+            this.cmbCat.Name = "cmbCat";
+            this.cmbCat.Size = new System.Drawing.Size(121, 21);
+            this.cmbCat.TabIndex = 10;
             // 
-            // date
+            // label3
             // 
-            this.date.HeaderText = "Datum";
-            this.date.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Kategorie:";
             // 
+            // label4
             // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(27, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Shop:";
             // 
-            this.date.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // cmbShop
             // 
+            this.cmbShop.FormattingEnabled = true;
+            this.cmbShop.Location = new System.Drawing.Point(88, 58);
+            this.cmbShop.Name = "cmbShop";
+            this.cmbShop.Size = new System.Drawing.Size(121, 21);
+            this.cmbShop.TabIndex = 12;
             // 
+            // label5
             // 
-            this.date.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.date.MonthCalendar.BackgroundStyle.Class = "";
-            this.date.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(28, 88);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(24, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Ort:";
             // 
+            // cmbLoc
             // 
+            this.cmbLoc.FormattingEnabled = true;
+            this.cmbLoc.Location = new System.Drawing.Point(88, 85);
+            this.cmbLoc.Name = "cmbLoc";
+            this.cmbLoc.Size = new System.Drawing.Size(121, 21);
+            this.cmbLoc.TabIndex = 14;
             // 
-            this.date.MonthCalendar.CommandsBackgroundStyle.Class = "";
-            this.date.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.date.MonthCalendar.DisplayMonth = new System.DateTime(2016, 2, 1, 0, 0, 0, 0);
-            this.date.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.date.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.date.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // grpSearch
             // 
+            this.grpSearch.Controls.Add(this.grpAdd);
+            this.grpSearch.Controls.Add(this.chbPeriod);
+            this.grpSearch.Controls.Add(this.chbLoc);
+            this.grpSearch.Controls.Add(this.chbShop);
+            this.grpSearch.Controls.Add(this.chbCat);
+            this.grpSearch.Controls.Add(this.btnSearch);
+            this.grpSearch.Controls.Add(this.cmbLoc);
+            this.grpSearch.Controls.Add(this.dtpTo);
+            this.grpSearch.Controls.Add(this.label5);
+            this.grpSearch.Controls.Add(this.label2);
+            this.grpSearch.Controls.Add(this.cmbCat);
+            this.grpSearch.Controls.Add(this.label1);
+            this.grpSearch.Controls.Add(this.label3);
+            this.grpSearch.Controls.Add(this.dtpFrom);
+            this.grpSearch.Controls.Add(this.label4);
+            this.grpSearch.Controls.Add(this.cmbShop);
+            this.grpSearch.Location = new System.Drawing.Point(12, 107);
+            this.grpSearch.Name = "grpSearch";
+            this.grpSearch.Size = new System.Drawing.Size(469, 122);
+            this.grpSearch.TabIndex = 16;
+            this.grpSearch.TabStop = false;
+            this.grpSearch.Text = "Suche nach:";
+            this.grpSearch.Visible = false;
             // 
+            // chbPeriod
             // 
-            this.date.MonthCalendar.NavigationBackgroundStyle.Class = "";
-            this.date.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.date.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.date.Name = "date";
+            this.chbPeriod.AutoSize = true;
+            this.chbPeriod.Location = new System.Drawing.Point(312, 12);
+            this.chbPeriod.Name = "chbPeriod";
+            this.chbPeriod.Size = new System.Drawing.Size(67, 17);
+            this.chbPeriod.TabIndex = 20;
+            this.chbPeriod.Text = "Zeitraum";
+            this.chbPeriod.UseVisualStyleBackColor = true;
             // 
-            // category
+            // chbLoc
             // 
-            this.category.DropDownHeight = 106;
-            this.category.DropDownWidth = 121;
-            this.category.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.category.HeaderText = "Kategorie";
-            this.category.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.category.IntegralHeight = false;
-            this.category.ItemHeight = 13;
-            this.category.MaxDropDownItems = 20;
-            this.category.Name = "category";
-            this.category.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.category.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.chbLoc.AutoSize = true;
+            this.chbLoc.Location = new System.Drawing.Point(11, 87);
+            this.chbLoc.Name = "chbLoc";
+            this.chbLoc.Size = new System.Drawing.Size(15, 14);
+            this.chbLoc.TabIndex = 19;
+            this.chbLoc.UseVisualStyleBackColor = true;
             // 
-            // company
+            // chbShop
             // 
-            this.company.DropDownHeight = 106;
-            this.company.DropDownWidth = 121;
-            this.company.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.company.HeaderText = "Shop";
-            this.company.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.company.IntegralHeight = false;
-            this.company.ItemHeight = 13;
-            this.company.Name = "company";
-            this.company.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.company.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.chbShop.AutoSize = true;
+            this.chbShop.Location = new System.Drawing.Point(11, 61);
+            this.chbShop.Name = "chbShop";
+            this.chbShop.Size = new System.Drawing.Size(15, 14);
+            this.chbShop.TabIndex = 18;
+            this.chbShop.UseVisualStyleBackColor = true;
             // 
-            // location
+            // chbCat
             // 
-            this.location.DropDownHeight = 106;
-            this.location.DropDownWidth = 121;
-            this.location.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.location.HeaderText = "Ort";
-            this.location.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.location.IntegralHeight = false;
-            this.location.ItemHeight = 13;
-            this.location.Name = "location";
-            this.location.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.location.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.chbCat.AutoSize = true;
+            this.chbCat.Location = new System.Drawing.Point(11, 35);
+            this.chbCat.Name = "chbCat";
+            this.chbCat.Size = new System.Drawing.Size(15, 14);
+            this.chbCat.TabIndex = 17;
+            this.chbCat.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(310, 89);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 16;
+            this.btnSearch.Text = "Suchen";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // grpAdd
+            // 
+            this.grpAdd.Controls.Add(this.btnAdd);
+            this.grpAdd.Controls.Add(this.txtAdd);
+            this.grpAdd.Controls.Add(this.lblAdd);
+            this.grpAdd.Location = new System.Drawing.Point(0, 0);
+            this.grpAdd.Name = "grpAdd";
+            this.grpAdd.Size = new System.Drawing.Size(469, 122);
+            this.grpAdd.TabIndex = 17;
+            this.grpAdd.TabStop = false;
+            this.grpAdd.Text = "Hinzufügen:";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(219, 88);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 13;
+            this.btnAdd.Text = "Hinzufügen";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtAdd
+            // 
+            this.txtAdd.Location = new System.Drawing.Point(77, 54);
+            this.txtAdd.Name = "txtAdd";
+            this.txtAdd.Size = new System.Drawing.Size(112, 20);
+            this.txtAdd.TabIndex = 12;
+            // 
+            // lblAdd
+            // 
+            this.lblAdd.AutoSize = true;
+            this.lblAdd.Location = new System.Drawing.Point(21, 58);
+            this.lblAdd.Name = "lblAdd";
+            this.lblAdd.Size = new System.Drawing.Size(50, 13);
+            this.lblAdd.TabIndex = 11;
+            this.lblAdd.Text = "Lokalität:";
             // 
             // FrmView
             // 
@@ -985,6 +1030,10 @@
         private DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn Search_category;
         private DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn Search_shop;
         private DevComponents.DotNetBar.Controls.DataGridViewComboBoxExColumn Search_location;
+        private System.Windows.Forms.CheckBox chbCat;
+        private System.Windows.Forms.CheckBox chbPeriod;
+        private System.Windows.Forms.CheckBox chbLoc;
+        private System.Windows.Forms.CheckBox chbShop;
     }
 }
 
