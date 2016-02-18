@@ -148,7 +148,11 @@ namespace ECIT_EMS
             
         //}
         
-    
+        public DataTable fetch(string query, string assignment)
+        {
+            theQueryHandler.create_Command(query, assignment);
+            return theQueryHandler.copy();
+        }
 
         public bool dropDatabase()
         {
