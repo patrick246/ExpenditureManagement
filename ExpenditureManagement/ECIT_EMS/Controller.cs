@@ -18,13 +18,13 @@ namespace ECIT_EMS
         SQLconn theSQLconnector;
         QueryHandler theQueryHandler;
         MySqlConnection conn;
-       
+
 
         private ArrayList outcome;
 
         public void pushData()
         {
-            
+
 
         }
 
@@ -59,7 +59,7 @@ namespace ECIT_EMS
             theQueryHandler.create_Command(query, assignment);
 
             outcome = theQueryHandler.sendQuery(repeat);
-            
+
             // if(outcome[0] != null) MessageBox.Show(Convert.ToString(outcome[0]));
             /* theSQLconnector.getValues();*/
         }
@@ -145,9 +145,9 @@ namespace ECIT_EMS
         //    {
         //        MessageBox.Show("Vorgang abgebrochen.", "Abbruch", MessageBoxButtons.OK, MessageBoxIcon.Information);
         //    }
-            
+
         //}
-        
+
         public DataTable fetch(string query, string assignment)
         {
             theQueryHandler.create_Command(query, assignment);
@@ -161,7 +161,7 @@ namespace ECIT_EMS
                 try
                 {
                     TakeInsert("DROP TABLE administrator, arrival, costumers, employees, locations, products, sale", "DROP DB");
-                    
+
                     return true;
                 }
                 catch
