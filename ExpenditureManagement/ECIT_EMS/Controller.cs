@@ -8,6 +8,7 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SQLite;
 
 namespace ECIT_EMS
 {
@@ -16,58 +17,74 @@ namespace ECIT_EMS
         FrmView frmSurface;
         //Calculator theCalculator;
         SQLconn theSQLconnector;
+        SQLiteConn theSQLiteconnector;
         QueryHandler theQueryHandler;
-        MySqlConnection conn;
+        SQLiteQueryHandler theSQLiteQueryHandler;
 
 
         private ArrayList outcome;
 
-        public void pushData()
-        {
-
-
-        }
-
-        public Controller(FrmView FrmSurface)
+        public Controller(FrmView FrmSurface, string Db)
         {
             frmSurface = FrmSurface;
-            //theCalculator = new Calculator();
-            theSQLconnector = new SQLconn(CreateConnStr("localhost", "root", "", "ems_db", "Convert Zero Datetime = True")); // server, benutzer, passwort und Datenbankbezeichnung eingeben
-            conn = theSQLconnector.setConnector();
-            theQueryHandler = new QueryHandler(ref conn, theSQLconnector, this);
+            if (Db == "sqlite")
+            {
+                theSQLiteconnector = new SQLiteConn("Data Source=converted.db;", "converted.db");
+                //theSQLiteconnector = new SQLiteConn("Data Source=ems.sqlite; Version=3;", "ems.");
+                SQLiteConnection Conn = theSQLiteconnector.getConnector();
+                theSQLiteQueryHandler = new SQLiteQueryHandler(ref Conn, theSQLiteconnector, this);
+            }
+            else
+            {
+                //theCalculator = new Calculator();
+                theSQLconnector = new SQLconn(CreateConnStr("localhost", "root", "", "ems_db", "Convert Zero Datetime = True")); // server, benutzer, passwort und Datenbankbezeichnung eingeben
+                MySqlConnection conn = theSQLconnector.getConnector();
+                theQueryHandler = new QueryHandler(ref conn, theSQLconnector, this);
+            }
         }
 
 
         private string CreateConnStr(string server, string user, string password, string database, string ConvertZERO)
         {
-            string connStr = "server=" + server + ";database=" + database + ";uid=" + user + ";password=" + password + ";" + ConvertZERO + ";";    // erstellt den, für die Verbindung notwendige,
-            return connStr;                                                                                                     // Connection String
+            string connStr = "server=" + server + ";database=" + database + ";uid=" + user + ";password=" + password + ";" + ConvertZERO + ";";
+            return connStr;
         }
 
-        public void TakeQuery(string query, string assignment) // Nimmt Datenbankfrage entgegen, erstellt das Command dazu und speichert das Array von Ergebnissen
-        {                                                                   // Sodass man sie von dort aus abrufen kann ( Line 60 )
+        public void TakeQuery(string query, string assignment) // MySQL
+        {
             theQueryHandler.create_Command(query, assignment);
 
             outcome = theQueryHandler.sendQuery();
             if (outcome == null) return;
-            /* theSQLconnector.getValues();*/
+        }
+
+        public void TakeQuery(string query) // SQLITE
+        {
+            theSQLiteQueryHandler.create_Command(query, "sqlite_");
+
+            outcome = theSQLiteQueryHandler.sendQuery();
+            if (outcome == null) return;
         }
 
 
-        public void TakeQueryMoreColumn(string query, string assignment, int repeat) // Nimmt Abfragen entgegen, die sich über mehrere Spalten auswirkt
+        public void TakeQueryMoreColumn(string query, string assignment, int repeat)
         {
             theQueryHandler.create_Command(query, assignment);
 
             outcome = theQueryHandler.sendQuery(repeat);
 
-            // if(outcome[0] != null) MessageBox.Show(Convert.ToString(outcome[0]));
-            /* theSQLconnector.getValues();*/
         }
 
         public void TakeInsert(string insert, string assignment) // Nimmt Insert und Update Anweisungen entgegen und führt sie aus
         {
             theQueryHandler.create_Command(insert, "insertData");
             theQueryHandler.sendInsert();
+        }
+
+        public void TakeInsert(string insert) // Nimmt Insert und Update Anweisungen entgegen und führt sie aus
+        {
+            theSQLiteQueryHandler.create_Command(insert, "insertData");
+            theSQLiteQueryHandler.sendInsert();
         }
 
         public string getOutcome(int x)         // gibt ein Ergebnis als String zurück, an " x " stelle im Array
@@ -122,14 +139,13 @@ namespace ECIT_EMS
             return result;
         }
 
-        //public int getArrayLength() // falls nötig, länge des Arrays abfragen
-        //{
-        //    return outcome.Length;
-        //}
-
         public string getLastInsert()
         {
             return Convert.ToString(theQueryHandler.LastInsert());
+        }
+        public string getSQLiteLastInsert()
+        {
+            return Convert.ToString(theSQLiteQueryHandler.LastInsert());
         }
 
         //public void doBackup()
@@ -152,6 +168,11 @@ namespace ECIT_EMS
         {
             theQueryHandler.create_Command(query, assignment);
             return theQueryHandler.copy();
+        }
+        public DataTable fetch(string query)
+        {
+            theSQLiteQueryHandler.create_Command(query, "");
+            return theSQLiteQueryHandler.copy();
         }
 
         public bool dropDatabase()

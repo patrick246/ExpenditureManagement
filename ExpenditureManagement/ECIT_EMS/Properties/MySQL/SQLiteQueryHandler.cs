@@ -1,26 +1,29 @@
 ﻿using System;
-using System.Collections;
-using MySql.Data.MySqlClient;
-using System.Windows.Forms;
+using System.Data.SQLite;
 using System.IO;
+using System.Collections;
+using System.Windows.Forms;
 using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace ECIT_EMS
 {
-    class QueryHandler
+    class SQLiteQueryHandler
     {
-        MySqlConnection conn;
-        SQLconn theConnector;
-        MySqlCommand aCommand;
+        SQLiteConnection sqlite_conn;
+        SQLiteConn theConnector;
+        SQLiteCommand aCommand;
         Controller theController;
         private ArrayList value = new ArrayList();
 
+        long Last_ID;
+
         DataTable dt = new DataTable();
 
-        public QueryHandler(ref MySqlConnection connection, SQLconn MySql_connector, Controller controller)
+        public SQLiteQueryHandler(ref SQLiteConnection connection, SQLiteConn SQLite_connector, Controller controller)
         {
-            conn = connection;
-            theConnector = MySql_connector;
+            sqlite_conn = connection;
+            theConnector = SQLite_connector;
             theController = controller;
         }
 
@@ -28,7 +31,8 @@ namespace ECIT_EMS
         public void create_Command(string query, string queryName)
         {
             value.Clear();
-            aCommand = new MySqlCommand(query, conn);
+            aCommand = new SQLiteCommand(query, sqlite_conn);
+            //aCommand.CommandText
             /*string result = sendQuery(getString_Int);*/
             //theController.getOutcome(result);
         }
@@ -40,19 +44,43 @@ namespace ECIT_EMS
             //             MessageBox.Show(state);
             try
             {
-                MySqlDataReader reader = null;
+                SQLiteDataReader reader = null;
 
                 reader = aCommand.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    
-                    value.Add(reader.GetString(0));
+                    //MessageBox.Show(reader.GetFieldType(0).ToString());
+                    switch (reader.GetFieldType(0).ToString())
+                    {
+                        case "System.Int64":
+                            value.Add(reader.GetInt64(0));
+                            break;
+                        case "System.String":
+                            value.Add(reader.GetString(0));
+                            break;
+                        case "System.Double":
+                            value.Add(reader.GetDouble(0));
+                            break;
+                        case "System.Int32":
+                            value.Add(reader.GetInt32(0));
+                            break;
+                    }
 
                 }
                 theConnector.Disconnect();
 
                 return value;
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            catch (IOException e)
+            {
+                MessageBox.Show(e.Message);
+                return null;
             }
             catch
             {
@@ -64,7 +92,7 @@ namespace ECIT_EMS
         public DataTable copy()
         {
             dt.Clear();
-            using (MySqlDataAdapter da = new MySqlDataAdapter(aCommand))
+            using (SQLiteDataAdapter da = new SQLiteDataAdapter(aCommand))
             {
                 da.Fill(dt);
             }
@@ -79,7 +107,7 @@ namespace ECIT_EMS
             //             MessageBox.Show(state);
             try
             {
-                MySqlDataReader reader = null;
+                SQLiteDataReader reader = null;
 
                 reader = aCommand.ExecuteReader();
                 while (reader.Read())
@@ -111,24 +139,32 @@ namespace ECIT_EMS
 
         public long LastInsert()
         {
-            long imageId;
-            return imageId = aCommand.LastInsertedId;
+            return Last_ID;
         }
         public void sendInsert()
         {
-            theConnector.Connect();
-
             try
             {
+                theConnector.Connect();
+                //MessageBox.Show(sqlite_conn.State.ToString());
+                //theConnector.Connect();
                 aCommand.ExecuteNonQuery();
                 //MessageBox.Show("Inserting Done!");
-                aCommand.Connection.Close();
+                // aCommand.Connection.Close();
+                Last_ID = sqlite_conn.LastInsertRowId;
+                //MessageBox.Show(Last_ID.ToString());
                 theConnector.Disconnect();
+
+                //MessageBox.Show(sqlite_conn.State.ToString());
             }
-            catch
+            catch (SQLiteException e)
             {
                 theConnector.Disconnect();
-                MessageBox.Show("Failed Inserting, check your Query, Command or Sourcecode.  Disconnected...");
+                MessageBox.Show(e.Message);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Failed Inserting, check your Query, Command or Sourcecode.  Disconnected...");
             }
 
         }

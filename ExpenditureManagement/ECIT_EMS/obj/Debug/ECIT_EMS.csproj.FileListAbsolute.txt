@@ -27,3 +27,11 @@ E:\Projects\2016\ExpenditureManagement\ECIT_EMS\bin\Debug\DevComponents.Instrume
 E:\Projects\2016\ExpenditureManagement\ECIT_EMS\bin\Debug\DevComponents.Instrumentation.dll
 E:\Projects\2016\ExpenditureManagement\ECIT_EMS\bin\Debug\mysql.data.dll
 E:\Projects\2016\ExpenditureManagement\ECIT_EMS\bin\Debug\s2industries.ZUGFeRD.dll
+E:\Projects\2016\ExpenditureManagement\ECIT_EMS\bin\Debug\EntityFramework.dll
+E:\Projects\2016\ExpenditureManagement\ECIT_EMS\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\2016\ExpenditureManagement\ECIT_EMS\bin\Debug\System.Data.SQLite.dll
+E:\Projects\2016\ExpenditureManagement\ECIT_EMS\bin\Debug\System.Data.SQLite.EF6.dll
+E:\Projects\2016\ExpenditureManagement\ECIT_EMS\bin\Debug\System.Data.SQLite.Linq.dll
+E:\Projects\2016\ExpenditureManagement\ECIT_EMS\bin\Debug\EntityFramework.xml
+E:\Projects\2016\ExpenditureManagement\ECIT_EMS\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\2016\ExpenditureManagement\ECIT_EMS\bin\Debug\System.Data.SQLite.xml

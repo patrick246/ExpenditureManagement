@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvRecord = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.A_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,10 +47,18 @@
             this.btnAddRow = new DevComponents.DotNetBar.ButtonX();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonDebts = new DevComponents.DotNetBar.RibbonBar();
+            this.btnBorrow = new DevComponents.DotNetBar.ButtonItem();
+            this.btnDebts = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonManager = new DevComponents.DotNetBar.RibbonBar();
+            this.btnEarnings = new DevComponents.DotNetBar.ButtonItem();
+            this.btnExpenses = new DevComponents.DotNetBar.ButtonItem();
+            this.btnFixcosts = new DevComponents.DotNetBar.ButtonItem();
+            this.btnBankaccount = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
             this.btnEnableSearch = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem15 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnStats = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.btnLocAdd = new DevComponents.DotNetBar.ButtonItem();
             this.btnShopAdd = new DevComponents.DotNetBar.ButtonItem();
@@ -89,29 +97,35 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cmbLoc = new System.Windows.Forms.ComboBox();
             this.grpSearch = new System.Windows.Forms.GroupBox();
+            this.grpAdd = new System.Windows.Forms.GroupBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.txtAdd = new System.Windows.Forms.TextBox();
+            this.lblAdd = new System.Windows.Forms.Label();
+            this.txtKeyWord = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.chbPrice = new System.Windows.Forms.CheckBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtMax = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtMin = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.chbShop = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.chbPeriod = new System.Windows.Forms.CheckBox();
             this.chbLoc = new System.Windows.Forms.CheckBox();
             this.chbCat = new System.Windows.Forms.CheckBox();
-            this.grpAdd = new System.Windows.Forms.GroupBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.txtAdd = new System.Windows.Forms.TextBox();
-            this.lblAdd = new System.Windows.Forms.Label();
-            this.txtKeyWord = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.chbKeyWord = new System.Windows.Forms.CheckBox();
             this.btnDelEntry = new System.Windows.Forms.Button();
+            this.grpStats = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).BeginInit();
             this.ribbonControl1.SuspendLayout();
+            this.ribbonPanel1.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.grpSearch.SuspendLayout();
             this.grpAdd.SuspendLayout();
+            this.grpStats.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvRecord
@@ -132,14 +146,14 @@
             this.category,
             this.company,
             this.location});
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRecord.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecord.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvRecord.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvRecord.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dgvRecord.Location = new System.Drawing.Point(0, 105);
@@ -322,6 +336,8 @@
             // ribbonPanel1
             // 
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel1.Controls.Add(this.ribbonDebts);
+            this.ribbonPanel1.Controls.Add(this.ribbonManager);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ribbonPanel1.Location = new System.Drawing.Point(0, 53);
             this.ribbonPanel1.Name = "ribbonPanel1";
@@ -343,6 +359,120 @@
             this.ribbonPanel1.StyleMouseOver.Class = "";
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
+            // 
+            // ribbonDebts
+            // 
+            this.ribbonDebts.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonDebts.BackgroundMouseOverStyle.Class = "";
+            this.ribbonDebts.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonDebts.BackgroundStyle.Class = "";
+            this.ribbonDebts.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonDebts.ContainerControlProcessDialogKey = true;
+            this.ribbonDebts.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonDebts.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnBorrow,
+            this.btnDebts});
+            this.ribbonDebts.Location = new System.Drawing.Point(237, 0);
+            this.ribbonDebts.Name = "ribbonDebts";
+            this.ribbonDebts.Size = new System.Drawing.Size(100, 43);
+            this.ribbonDebts.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonDebts.TabIndex = 1;
+            this.ribbonDebts.Text = "Leihgaben";
+            // 
+            // 
+            // 
+            this.ribbonDebts.TitleStyle.Class = "";
+            this.ribbonDebts.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonDebts.TitleStyleMouseOver.Class = "";
+            this.ribbonDebts.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btnBorrow
+            // 
+            this.btnBorrow.Name = "btnBorrow";
+            this.btnBorrow.SubItemsExpandWidth = 14;
+            this.btnBorrow.Text = "Verleih";
+            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
+            // 
+            // btnDebts
+            // 
+            this.btnDebts.Name = "btnDebts";
+            this.btnDebts.SubItemsExpandWidth = 14;
+            this.btnDebts.Text = "Schulden";
+            this.btnDebts.Click += new System.EventHandler(this.btnDebts_Click);
+            // 
+            // ribbonManager
+            // 
+            this.ribbonManager.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonManager.BackgroundMouseOverStyle.Class = "";
+            this.ribbonManager.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonManager.BackgroundStyle.Class = "";
+            this.ribbonManager.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonManager.ContainerControlProcessDialogKey = true;
+            this.ribbonManager.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonManager.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnEarnings,
+            this.btnExpenses,
+            this.btnFixcosts,
+            this.btnBankaccount});
+            this.ribbonManager.Location = new System.Drawing.Point(3, 0);
+            this.ribbonManager.Name = "ribbonManager";
+            this.ribbonManager.Size = new System.Drawing.Size(234, 43);
+            this.ribbonManager.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonManager.TabIndex = 0;
+            this.ribbonManager.Text = "Verwaltung";
+            // 
+            // 
+            // 
+            this.ribbonManager.TitleStyle.Class = "";
+            this.ribbonManager.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonManager.TitleStyleMouseOver.Class = "";
+            this.ribbonManager.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btnEarnings
+            // 
+            this.btnEarnings.Name = "btnEarnings";
+            this.btnEarnings.SubItemsExpandWidth = 14;
+            this.btnEarnings.Text = "Einnahmen";
+            this.btnEarnings.Click += new System.EventHandler(this.btnEarnings_Click);
+            // 
+            // btnExpenses
+            // 
+            this.btnExpenses.Name = "btnExpenses";
+            this.btnExpenses.SubItemsExpandWidth = 14;
+            this.btnExpenses.Text = "Ausgaben";
+            this.btnExpenses.Click += new System.EventHandler(this.btnExpenses_Click);
+            // 
+            // btnFixcosts
+            // 
+            this.btnFixcosts.Name = "btnFixcosts";
+            this.btnFixcosts.SubItemsExpandWidth = 14;
+            this.btnFixcosts.Text = "Feste Kosten";
+            this.btnFixcosts.Click += new System.EventHandler(this.btnFixcosts_Click);
+            // 
+            // btnBankaccount
+            // 
+            this.btnBankaccount.Name = "btnBankaccount";
+            this.btnBankaccount.SubItemsExpandWidth = 14;
+            this.btnBankaccount.Text = "Konto";
+            this.btnBankaccount.Click += new System.EventHandler(this.btnBankaccount_Click);
             // 
             // ribbonPanel2
             // 
@@ -389,7 +519,7 @@
             this.ribbonBar3.Dock = System.Windows.Forms.DockStyle.Left;
             this.ribbonBar3.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnEnableSearch,
-            this.buttonItem15});
+            this.btnStats});
             this.ribbonBar3.Location = new System.Drawing.Point(149, 0);
             this.ribbonBar3.Name = "ribbonBar3";
             this.ribbonBar3.Size = new System.Drawing.Size(88, 43);
@@ -414,11 +544,12 @@
             this.btnEnableSearch.Text = "Suche";
             this.btnEnableSearch.Click += new System.EventHandler(this.btnEnableSearch_Click);
             // 
-            // buttonItem15
+            // btnStats
             // 
-            this.buttonItem15.Name = "buttonItem15";
-            this.buttonItem15.SubItemsExpandWidth = 14;
-            this.buttonItem15.Text = "Statistik";
+            this.btnStats.Name = "btnStats";
+            this.btnStats.SubItemsExpandWidth = 14;
+            this.btnStats.Text = "Statistik";
+            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
             // 
             // ribbonBar2
             // 
@@ -626,14 +757,14 @@
             this.Search_category,
             this.Search_shop,
             this.Search_location});
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSearch.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSearch.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvSearch.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dgvSearch.Location = new System.Drawing.Point(0, 235);
@@ -829,7 +960,7 @@
             // 
             // grpSearch
             // 
-            this.grpSearch.Controls.Add(this.grpAdd);
+            this.grpSearch.Controls.Add(this.lblInfo);
             this.grpSearch.Controls.Add(this.txtKeyWord);
             this.grpSearch.Controls.Add(this.chbPrice);
             this.grpSearch.Controls.Add(this.btnSearch);
@@ -852,6 +983,7 @@
             this.grpSearch.Controls.Add(this.label3);
             this.grpSearch.Controls.Add(this.dtpFrom);
             this.grpSearch.Controls.Add(this.chbKeyWord);
+            this.grpSearch.Controls.Add(this.grpAdd);
             this.grpSearch.Location = new System.Drawing.Point(12, 107);
             this.grpSearch.Name = "grpSearch";
             this.grpSearch.Size = new System.Drawing.Size(618, 122);
@@ -859,6 +991,56 @@
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Suche nach:";
             this.grpSearch.Visible = false;
+            // 
+            // grpAdd
+            // 
+            this.grpAdd.Controls.Add(this.btnAdd);
+            this.grpAdd.Controls.Add(this.txtAdd);
+            this.grpAdd.Controls.Add(this.lblAdd);
+            this.grpAdd.Location = new System.Drawing.Point(0, 0);
+            this.grpAdd.Name = "grpAdd";
+            this.grpAdd.Size = new System.Drawing.Size(618, 122);
+            this.grpAdd.TabIndex = 17;
+            this.grpAdd.TabStop = false;
+            this.grpAdd.Text = "Hinzufügen:";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(119, 87);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(94, 29);
+            this.btnAdd.TabIndex = 13;
+            this.btnAdd.Text = "Hinzufügen";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtAdd
+            // 
+            this.txtAdd.Location = new System.Drawing.Point(85, 48);
+            this.txtAdd.Name = "txtAdd";
+            this.txtAdd.Size = new System.Drawing.Size(128, 20);
+            this.txtAdd.TabIndex = 12;
+            // 
+            // lblAdd
+            // 
+            this.lblAdd.AutoSize = true;
+            this.lblAdd.Location = new System.Drawing.Point(19, 50);
+            this.lblAdd.Name = "lblAdd";
+            this.lblAdd.Size = new System.Drawing.Size(50, 13);
+            this.lblAdd.TabIndex = 11;
+            this.lblAdd.Text = "Lokalität:";
+            // 
+            // txtKeyWord
+            // 
+            // 
+            // 
+            // 
+            this.txtKeyWord.Border.Class = "TextBoxBorder";
+            this.txtKeyWord.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtKeyWord.Location = new System.Drawing.Point(264, 84);
+            this.txtKeyWord.Name = "txtKeyWord";
+            this.txtKeyWord.Size = new System.Drawing.Size(110, 20);
+            this.txtKeyWord.TabIndex = 28;
             // 
             // chbPrice
             // 
@@ -869,6 +1051,16 @@
             this.chbPrice.TabIndex = 25;
             this.chbPrice.Text = "Preis in €";
             this.chbPrice.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(43, 87);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(94, 29);
+            this.btnSearch.TabIndex = 16;
+            this.btnSearch.Text = "Suchen";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtMax
             // 
@@ -893,16 +1085,6 @@
             this.txtMin.Name = "txtMin";
             this.txtMin.Size = new System.Drawing.Size(78, 20);
             this.txtMin.TabIndex = 23;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(43, 87);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(94, 29);
-            this.btnSearch.TabIndex = 16;
-            this.btnSearch.Text = "Suchen";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label7
             // 
@@ -959,56 +1141,6 @@
             this.chbCat.TabIndex = 17;
             this.chbCat.UseVisualStyleBackColor = true;
             // 
-            // grpAdd
-            // 
-            this.grpAdd.Controls.Add(this.btnAdd);
-            this.grpAdd.Controls.Add(this.txtAdd);
-            this.grpAdd.Controls.Add(this.lblAdd);
-            this.grpAdd.Location = new System.Drawing.Point(0, 0);
-            this.grpAdd.Name = "grpAdd";
-            this.grpAdd.Size = new System.Drawing.Size(618, 122);
-            this.grpAdd.TabIndex = 17;
-            this.grpAdd.TabStop = false;
-            this.grpAdd.Text = "Hinzufügen:";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(119, 87);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(94, 29);
-            this.btnAdd.TabIndex = 13;
-            this.btnAdd.Text = "Hinzufügen";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // txtAdd
-            // 
-            this.txtAdd.Location = new System.Drawing.Point(85, 48);
-            this.txtAdd.Name = "txtAdd";
-            this.txtAdd.Size = new System.Drawing.Size(128, 20);
-            this.txtAdd.TabIndex = 12;
-            // 
-            // lblAdd
-            // 
-            this.lblAdd.AutoSize = true;
-            this.lblAdd.Location = new System.Drawing.Point(19, 50);
-            this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(50, 13);
-            this.lblAdd.TabIndex = 11;
-            this.lblAdd.Text = "Lokalität:";
-            // 
-            // txtKeyWord
-            // 
-            // 
-            // 
-            // 
-            this.txtKeyWord.Border.Class = "TextBoxBorder";
-            this.txtKeyWord.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtKeyWord.Location = new System.Drawing.Point(264, 84);
-            this.txtKeyWord.Name = "txtKeyWord";
-            this.txtKeyWord.Size = new System.Drawing.Size(110, 20);
-            this.txtKeyWord.TabIndex = 28;
-            // 
             // chbKeyWord
             // 
             this.chbKeyWord.AutoSize = true;
@@ -1021,6 +1153,7 @@
             // 
             // btnDelEntry
             // 
+            this.btnDelEntry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelEntry.Location = new System.Drawing.Point(1172, 200);
             this.btnDelEntry.Name = "btnDelEntry";
             this.btnDelEntry.Size = new System.Drawing.Size(94, 29);
@@ -1030,6 +1163,78 @@
             this.btnDelEntry.Visible = false;
             this.btnDelEntry.Click += new System.EventHandler(this.btnDelEntry_Click);
             // 
+            // grpStats
+            // 
+            this.grpStats.CanvasColor = System.Drawing.SystemColors.Control;
+            this.grpStats.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.grpStats.Controls.Add(this.label9);
+            this.grpStats.Controls.Add(this.label8);
+            this.grpStats.Location = new System.Drawing.Point(0, 102);
+            this.grpStats.Name = "grpStats";
+            this.grpStats.Size = new System.Drawing.Size(1278, 537);
+            // 
+            // 
+            // 
+            this.grpStats.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.grpStats.Style.BackColorGradientAngle = 90;
+            this.grpStats.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.grpStats.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grpStats.Style.BorderBottomWidth = 1;
+            this.grpStats.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.grpStats.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grpStats.Style.BorderLeftWidth = 1;
+            this.grpStats.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grpStats.Style.BorderRightWidth = 1;
+            this.grpStats.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grpStats.Style.BorderTopWidth = 1;
+            this.grpStats.Style.Class = "";
+            this.grpStats.Style.CornerDiameter = 4;
+            this.grpStats.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.grpStats.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.grpStats.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.grpStats.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.grpStats.StyleMouseDown.Class = "";
+            this.grpStats.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.grpStats.StyleMouseOver.Class = "";
+            this.grpStats.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.grpStats.TabIndex = 14;
+            this.grpStats.Text = "Statistiken";
+            this.grpStats.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(1098, 482);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "label9";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "label8";
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(396, 106);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(40, 12);
+            this.lblInfo.TabIndex = 2;
+            this.lblInfo.Text = "Suche...";
+            // 
             // FrmView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1037,15 +1242,16 @@
             this.ClientSize = new System.Drawing.Size(1278, 638);
             this.Controls.Add(this.btnDelEntry);
             this.Controls.Add(this.grpSearch);
-            this.Controls.Add(this.dgvSearch);
             this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.btnAddRow);
             this.Controls.Add(this.btnRmvRow);
             this.Controls.Add(this.btnSend);
+            this.Controls.Add(this.grpStats);
+            this.Controls.Add(this.dgvSearch);
             this.Controls.Add(this.dgvRecord);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(1800, 800);
+            this.MaximumSize = new System.Drawing.Size(1800, 1000);
             this.MinimumSize = new System.Drawing.Size(640, 570);
             this.Name = "FrmView";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
@@ -1055,12 +1261,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecord)).EndInit();
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
+            this.ribbonPanel1.ResumeLayout(false);
             this.ribbonPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
             this.grpSearch.ResumeLayout(false);
             this.grpSearch.PerformLayout();
             this.grpAdd.ResumeLayout(false);
             this.grpAdd.PerformLayout();
+            this.grpStats.ResumeLayout(false);
+            this.grpStats.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1091,7 +1300,7 @@
         private DevComponents.DotNetBar.StyleManager styleManager2;
         private DevComponents.DotNetBar.RibbonBar ribbonBar3;
         private DevComponents.DotNetBar.ButtonItem btnEnableSearch;
-        private DevComponents.DotNetBar.ButtonItem buttonItem15;
+        private DevComponents.DotNetBar.ButtonItem btnStats;
         private DevComponents.DotNetBar.RibbonBar ribbonBar2;
         private DevComponents.DotNetBar.ButtonItem btnLocAdd;
         private DevComponents.DotNetBar.ButtonItem btnShopAdd;
@@ -1143,6 +1352,18 @@
         private System.Windows.Forms.CheckBox chbKeyWord;
         private DevComponents.DotNetBar.Controls.TextBoxX txtKeyWord;
         private System.Windows.Forms.Button btnDelEntry;
+        private DevComponents.DotNetBar.Controls.GroupPanel grpStats;
+        private DevComponents.DotNetBar.RibbonBar ribbonManager;
+        private DevComponents.DotNetBar.ButtonItem btnEarnings;
+        private DevComponents.DotNetBar.ButtonItem btnExpenses;
+        private DevComponents.DotNetBar.RibbonBar ribbonDebts;
+        private DevComponents.DotNetBar.ButtonItem btnBorrow;
+        private DevComponents.DotNetBar.ButtonItem btnDebts;
+        private DevComponents.DotNetBar.ButtonItem btnFixcosts;
+        private DevComponents.DotNetBar.ButtonItem btnBankaccount;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblInfo;
     }
 }
 
