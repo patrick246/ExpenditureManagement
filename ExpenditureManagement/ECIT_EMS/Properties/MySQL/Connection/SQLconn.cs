@@ -20,7 +20,7 @@ namespace ECIT_EMS
             conn = new MySqlConnection(connStr);  // ein Connection Objekt erzeugen mit entsprechendem "connection String" ( erstellt im Controller )
         }
 
-        public MySqlConnection setConnector()
+        public MySqlConnection getConnector()
         {
             return conn;
         }
